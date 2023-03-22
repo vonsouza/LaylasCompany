@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Layla Company | Home</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
     <header class="divider">
       <div class="logo">
-        <img src="/images/noun_Tent_2517.svg" alt="tent image for logo">
-        <a href="index.html"> Layla<span class="highlight">Company</span></a>
+        <!-- <img src="/images/noun_Tent_2517.svg" alt="tent image for logo"> -->
+        
+        <!-- <a href="index.html"><i class='bx bx-menu'></i> Layla<span class="highlight">Company</span></a> -->
+        <!-- <i class='bx bx-menu'>Layla<span class="highlight">Company</span></i>  -->
+        <div>
+          <a><i class='bx bx-menu'></i> Layla<span class="highlight">Company</span></a>
+        </div>
       </div>
       <div class="cart">
         <a href="cart/index.html">
@@ -54,7 +60,7 @@
           <li class="product-card">
             <a href="product_pages/marmot-ajax-3.html">
             <img
-              src="images/tents/marmot-ajax-tent-3-person-3-season-in-pale-pumpkin-terracotta~p~880rr_01~320.jpg"
+              src="images/tents/theo-bracelet.jpg"
               alt="Marmot Ajax tent"
             />
             <h3 class="card__brand">Marmot</h3>
@@ -64,7 +70,7 @@
           <li class="product-card">
             <a href="product_pages/northface-talus-4.html">
             <img
-              src="images/tents/the-north-face-talus-tent-4-person-3-season-in-golden-oak-saffron-yellow~p~985rf_01~320.jpg"
+              src="images/tents/lara2-bracelet.jpg"
               alt="Talus Tent - 4-Person, 3-Season"
             />
             <h3 class="card__brand">The North Face</h3>
@@ -75,7 +81,7 @@
           <li class="product-card">
             <a href="product_pages/northface-alpine-3.html">
             <img
-              src="images/tents/the-north-face-alpine-guide-tent-3-person-4-season-in-canary-yellow-high-rise-grey~p~985pr_01~320.jpg"
+              src="images/tents/lara1-bracelet.jpg"
               alt="Alpine Guide Tent - 3-Person, 4-Season"
             />
             <h3 class="card__brand">The North Face</h3>
@@ -87,7 +93,7 @@
           <li class="product-card">
             <a href="product_pages/cedar-ridge-rimrock-2.html">
             <img
-              src="images/tents/cedar-ridge-rimrock-tent-2-person-3-season-in-rust-clay~p~344yj_01~320.jpg"
+              src="images/tents/maya-bracelet.jpg"
               alt="Rimrock Tent - 2-Person, 3-Season"
             />
             <h3 class="card__brand">Cedar Ridge</h3>
@@ -98,7 +104,48 @@
           </li>
         </ul>
       </section>
+      <!-- sidebar -->
+      <div class="sidebar close">
+        <div class="close-x"><i class='bx bx-x'></i></div>
+
+        <div class="container">
+         <ul class="nav-items">
+            <li>
+              <a href="#">
+                <span class="item_name">One</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="item_name">Two</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="item_name">Three</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="item_name">Four</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </main>
     <footer>&copy;2023 - Loja de pulseiras de Layla Vital</footer>
+    <script>
+      let sidebar = document.querySelector(".sidebar");
+      let openSideBarBtn = document.querySelector(".bx-menu");
+      openSideBarBtn.addEventListener("click", ()=>{
+        sidebar.classList.toggle("close");
+      });
+
+      let closeSideBarBtn = document.querySelector(".bx-x");
+      closeSideBarBtn.addEventListener("click", ()=>{
+        sidebar.classList.toggle("close");
+      });
+    </script>
   </body>
 </html>

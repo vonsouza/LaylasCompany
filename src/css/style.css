@@ -16,6 +16,9 @@
 * {
   box-sizing: border-box;
 }
+/* *{
+  outline: solid 0.25rem rgba(18,243,37, 0.5);
+} */
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -219,4 +222,111 @@ button {
 footer {
   font-size: var(--small-font);
   padding: 1em;
+}
+
+/**sidebar*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background: #de88f3; /*#11101d;*/
+  transition: all 0.5s ease;
+}
+.sidebar.close {
+  width: 0px;
+}
+.sidebar .close-x {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.sidebar .nav-items {
+  height: 100%;
+  padding: 0 0 150px 0;
+  overflow: auto;
+}
+.sidebar .nav-items li {
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+  align-items: center;
+}
+.sidebar .nav-items li:hover {
+  background: #A020F0; /*#436f70;*/
+}
+.sidebar .nav-items li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.sidebar .nav-items li a .item_name {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.sidebar.close .nav-items li a .item_name {
+  opacity: 0;
+  pointer-events: none;
+}
+.bx-menu:hover{
+  transform: scale(1.5);
+}
+.text-body{
+  margin-left: 60px;
+  padding: 0;
+}
+.close-x{
+  text-align: right;
+  display: grid;
+}
+.bx-x:hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
+div.container {
+  text-align: center;
+}
+ul.nav-items{
+  display: inline-block;
+  text-align: center;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* .sidebar ~ .home-section {
+  background: #d3d3d3;
+  opacity:0.5;
+}
+.sidebar.close ~ .home-section {
+  left: 0px;
+  background: #e4e9f7;
+  opacity:1;
+} */
+.sidebar .close-x i {
+  font-size: 30px;
+  color: #fff;
+  height: 50px;
+  min-width: 180px;
+  text-align: right;
+  line-height: 50px;
+}
+@media (max-width: 540px) {
+  .sidebar.close .nav-items li .sub-menu {
+    display: none;
+  }
 }
