@@ -2,8 +2,8 @@
   --font-body: Arial, Helvetica, sans-serif;
   --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
   /* colors */
-  --primary-color: #f0a868;
-  --secondary-color: #525b0f;
+  --primary-color: #330066;/* #f0a868;*/
+  --secondary-color: #9555cc; /*#525b0f;*/
   --tertiary-color: #de88f3; /* #a4b8c4;*/
   --light-grey: #d0d0d0;
   --dark-grey: #303030;
@@ -98,6 +98,29 @@ button {
   border-bottom: 2px solid var(--primary-color);
 }
 /* End utility classes */
+
+/* Alert */
+#alertSuccess{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  margin: 5px;
+  width: 465px;
+  background-color: rgb(30, 158, 30);
+  border: 3px solid var(--primary-color);
+}
+
+#removeItem:hover {
+  transform: scale(1.05);
+
+}
+
+button:hover {
+  transform: scale(1.05);
+  border: 2px solid rgb(226, 212, 17);
+  opacity: 0.85;
+}
 
 /* Cart icon styles */
 .cart {
