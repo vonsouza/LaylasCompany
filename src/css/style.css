@@ -288,11 +288,12 @@ footer {
   align-items: center;
   padding: auto;
 }
-.sidebar .nav-items li:hover {
-  background: var(--secondary-color);/* #A020F0; /*#436f70;*/
+.item_name{
+  margin: 5px;
 }
-.sidebar.close .nav-items li:hover {
-  background: #ffffff; /*#436f70;*/
+.sidebar .item_name:hover{
+  background-color: var(--secondary-color);
+  transform: scale(1.1);
 }
 .sidebar.close a:hover {
   cursor: default;
