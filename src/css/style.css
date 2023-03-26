@@ -113,7 +113,6 @@ button {
 
 #removeItem:hover {
   transform: scale(1.05);
-
 }
 
 button:hover {
@@ -133,7 +132,8 @@ button:hover {
   width: 25px;
 }
 .cart:hover svg {
-  fill: gray;
+  fill: var(--secondary-color);
+  transform: scale(1.3);
 }
 
 /* End cart icon styles */
@@ -154,6 +154,7 @@ button:hover {
   justify-content: space-between;
   list-style-type: none;
   padding: 0;
+  animation: pulse 2s infinite;
 }
 .product-list a {
   text-decoration: none;
@@ -192,7 +193,24 @@ button:hover {
   width: 100%;
 }
 
+.home-icon{
+  fill: var(--tertiary-color);
+  width: 30px;
+  height: 30px;
+  margin: 3px;
+}
+.home-icon:hover{
+  fill: var(--secondary-color);
+  transform: scale(1.3);
+}
+.company-name{
+  align-content: center;
+}
 /* Start cart list card styles */
+.cart-icon{
+  fill: var(--tertiary-color);
+}
+
 .cart-card {
   display: grid;
   grid-template-columns: 25% auto 15%;
@@ -276,9 +294,10 @@ footer {
   list-style: none;
   transition: all 0.4s ease;
   align-items: center;
+  padding: auto;
 }
 .sidebar .nav-items li:hover {
-  background: #A020F0; /*#436f70;*/
+  background: var(--secondary-color);/* #A020F0; /*#436f70;*/
 }
 .sidebar.close .nav-items li:hover {
   background: #ffffff; /*#436f70;*/
@@ -299,10 +318,10 @@ footer {
 }
 /* heart */
 .heart {
-  fill: red;
+  fill: var(--tertiary-color);
   position: relative;
-  top: 3.5px;
-  width: 35px;
+  top: 5px;
+  width: 50px;
   /*animation: pulse-heart 1s ease infinite, */
   animation-name: pulse-heart;
   animation-duration: 2s;
@@ -330,11 +349,16 @@ footer {
   pointer-events: none;
 }
 .bx-menu:hover{
-  transform: scale(1.5);
+  fill: var(--secondary-color);
+  transform: scale(1.3);
 }
 .bx-menu{
+  padding: 1px;
   margin: 3.25px;
-  animation: pulse 2s infinite;
+  /* animation: pulse 2s infinite; */
+  fill: var(--tertiary-color);
+  width: 30px;
+  height: 30px;
 }
 @-webkit-keyframes pulse {
   0% {
