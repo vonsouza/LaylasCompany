@@ -37,6 +37,7 @@
         
 
           </svg> -->
+          <span class="badge badge-warning" id="lblCartCount"> </span>
         </a>
       </div>
     </header>
@@ -165,6 +166,28 @@
       closeSideBarBtn.addEventListener("click", ()=>{
         sidebar.classList.toggle("close");
       });
+
+      function getQtyItens() {
+        let qty = 0;
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          const value = localStorage.getItem(key);
+          const obj = JSON.parse(value);
+          let quantity = parseInt(obj.qty);
+          qty += quantity;
+        }
+        return qty;
+      }
+      function displayQtyAboveCart() {
+        let quantity = getQtyItens();
+        if (quantity > 0) {
+          document.getElementById("lblCartCount").style.visibility = "visible";
+          document.getElementById("lblCartCount").innerHTML = quantity;
+        } else {
+          document.getElementById("lblCartCount").style.visibility = "hidden";
+        }
+      }
+      displayQtyAboveCart();
     </script>
   </body>
 </html>

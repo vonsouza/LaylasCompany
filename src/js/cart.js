@@ -1,4 +1,4 @@
-import { getLocalStorage } from "./utils.mjs";
+import { setLocalStorage } from "./utils.mjs";
 
 // function renderCartContents() {
 //   const cartItems = getLocalStorage("so-cart");
@@ -37,7 +37,6 @@ function cartItemTemplate(itemJson) {
     <h2 class="card__name">${item.Name}</h2>
   </a>
   <p class="cart-card__color">${item.Colors[0].ColorName}</p>
-  <p class="cart-card__quantity">qty: 1</p>
   <div id="removeItem">
     <p id="removeFromCart${item.Id}"" data-id="removeItem"> 
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -46,42 +45,44 @@ function cartItemTemplate(itemJson) {
       </svg>
     </p>
   </div>
+  <p class="cart-card__quantity"> qty: ${item.qty} 
+    <svg id="addQty${item.Id}"" data-id="addQtyItem${item.Id}" class="add-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256S114.6 512 256 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
+  </p>
   <p class="cart-card__price">$${item.FinalPrice}</p>
 </li>`;
-//&#128465;&#65039; trash icon
   return newItem;
 }
-
+//<i class="fa fa-plus-circle" id="addQty${item.Id}"" data-id="addQtyItem${item.Id}"></i> style="width: 15px; height: 15px;"
 function removeElements() {
   if (document.getElementById("removeFromCart880RR"))
     document
       .getElementById("removeFromCart880RR")
       .addEventListener("click", removeItem.bind(this, "880RR"));
-  
+
   if (document.getElementById("removeFromCart985RF"))
-  document
-    .getElementById("removeFromCart985RF")
-    .addEventListener("click", removeItem.bind(this, "985RF"));
+    document
+      .getElementById("removeFromCart985RF")
+      .addEventListener("click", removeItem.bind(this, "985RF"));
 
   if (document.getElementById("removeFromCart989CG"))
-  document
-    .getElementById("removeFromCart989CG")
-    .addEventListener("click", removeItem.bind(this, "989CG"));
+    document
+      .getElementById("removeFromCart989CG")
+      .addEventListener("click", removeItem.bind(this, "989CG"));
 
   if (document.getElementById("removeFromCart985PR"))
-  document
-    .getElementById("removeFromCart985PR")
-    .addEventListener("click", removeItem.bind(this, "985PR"));
+    document
+      .getElementById("removeFromCart985PR")
+      .addEventListener("click", removeItem.bind(this, "985PR"));
 
   if (document.getElementById("removeFromCart880RT"))
-  document
-    .getElementById("removeFromCart880RT")
-    .addEventListener("click", removeItem.bind(this, "880RT"));
+    document
+      .getElementById("removeFromCart880RT")
+      .addEventListener("click", removeItem.bind(this, "880RT"));
 
   if (document.getElementById("removeFromCart344YJ"))
-  document
-    .getElementById("removeFromCart344YJ")
-    .addEventListener("click", removeItem.bind(this, "344YJ"));
+    document
+      .getElementById("removeFromCart344YJ")
+      .addEventListener("click", removeItem.bind(this, "344YJ"));
 }
 
 function removeItem(idToBeRemoved) {
@@ -89,9 +90,129 @@ function removeItem(idToBeRemoved) {
   updateCart();
 }
 
-function updateCart(){
+function addElements() {
+  if (document.getElementById("addQty880RR"))
+    document
+      .getElementById("addQty880RR")
+      .addEventListener("click", addItem.bind(this, "880RR"));
+
+  if (document.getElementById("addQty985RF"))
+    document
+      .getElementById("addQty985RF")
+      .addEventListener("click", addItem.bind(this, "985RF"));
+
+  if (document.getElementById("addQty989CG"))
+    document
+      .getElementById("addQty989CG")
+      .addEventListener("click", addItem.bind(this, "989CG"));
+
+  if (document.getElementById("addQty985PR"))
+    document
+      .getElementById("addQty985PR")
+      .addEventListener("click", addItem.bind(this, "985PR"));
+
+  if (document.getElementById("addQty880RT"))
+    document
+      .getElementById("addQty880RT")
+      .addEventListener("click", addItem.bind(this, "880RT"));
+
+  if (document.getElementById("addQty344YJ"))
+    document
+      .getElementById("addQty344YJ")
+      .addEventListener("click", addItem.bind(this, "344YJ"));
+}
+
+function addItem(idToBeAdded) {
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    if (key == idToBeAdded) {
+      const obj = JSON.parse(value);
+      let quantity = parseInt(obj.qty);
+      quantity += 1;
+      obj.qty = quantity.toString();
+      setLocalStorage(key, obj);
+    }
+  }
+  updateCart();
+}
+
+function displayPrice() {
+  let price = getPrice();
+  if (price > 0) {
+    document.getElementById("cart-footer").style.visibility = "visible";
+    document.getElementById("cart-total-value").innerHTML = price;
+  } else {
+    document.getElementById("cart-footer").style.visibility = "hidden";
+  }
+}
+
+function getPrice() {
+  let priceToDisplay = 0;
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    const obj = JSON.parse(value);
+    let listPrice = parseFloat(obj.ListPrice);
+    let quantity = parseInt(obj.qty);
+
+    priceToDisplay = priceToDisplay + listPrice * quantity;
+  }
+  return CurrencyFormatted(priceToDisplay);
+}
+
+function CurrencyFormatted(amount) {
+  var i = parseFloat(amount);
+  if (isNaN(i)) {
+    i = 0.0;
+  }
+  var minus = "";
+  if (i < 0) {
+    minus = "-";
+  }
+  i = Math.abs(i);
+  i = parseInt((i + 0.005) * 100);
+  i = i / 100;
+  var s = new String(i);
+  if (s.indexOf(".") < 0) {
+    s += ".00";
+  }
+  if (s.indexOf(".") == s.length - 2) {
+    s += "0";
+  }
+  s = minus + s;
+  return s;
+}
+export function getQtyItens() {
+  let qty = 0;
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    const obj = JSON.parse(value);
+    let quantity = parseInt(obj.qty);
+    qty += quantity;
+  }
+  return qty;
+}
+
+function displayQtyAboveCart() {
+  let quantity = getQtyItens();
+  if (quantity > 0) {
+    document.getElementById("lblCartCount").style.visibility = "visible";
+    document.getElementById("lblCartCount").innerHTML = quantity;
+  } else {
+    document.getElementById("lblCartCount").style.visibility = "hidden";
+  }
+}
+
+function updateCart() {
   renderCartContents();
+  displayPrice();
+  displayQtyAboveCart();
+  addElements();
   removeElements();
 }
+
+
 
 updateCart();
