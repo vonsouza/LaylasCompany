@@ -200,10 +200,23 @@ function displayQtyAboveCart() {
   if (quantity > 0) {
     document.getElementById("lblCartCount").style.visibility = "visible";
     document.getElementById("lblCartCount").innerHTML = quantity;
+    document.getElementById("emptyCartMessage").style.visibility = "hidden";
   } else {
     document.getElementById("lblCartCount").style.visibility = "hidden";
+    //insert empty cart
+    document.getElementById("emptyCartMessage").style.visibility = "visible";
   }
 }
+
+// function checkEmptyCart(){
+//   let quantity = getQtyItens();
+//   if (quantity  0) {
+//     document.getElementById("lblCartCount").style.visibility = "visible";
+//     document.getElementById("lblCartCount").innerHTML = quantity;
+//   } else {
+//     document.getElementById("lblCartCount").style.visibility = "hidden";
+//   }
+// }
 
 function updateCart() {
   renderCartContents();
@@ -211,6 +224,7 @@ function updateCart() {
   displayQtyAboveCart();
   addElements();
   removeElements();
+//  checkEmptyCart();
 }
 
 
