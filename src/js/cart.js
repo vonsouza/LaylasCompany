@@ -1,10 +1,5 @@
 import { setLocalStorage } from "./utils.mjs";
 
-// function renderCartContents() {
-//   const cartItems = getLocalStorage("so-cart");
-//   const htmlItems = cartItems.map((item) => cartItemTemplate(item));
-//   document.querySelector(".product-list").innerHTML = htmlItems.join("");
-// }
 export function renderCartContents() {
   let cartItems = [];
   for (let i = 0; i < localStorage.length; i++) {
@@ -195,16 +190,18 @@ export function getQtyItens() {
   return qty;
 }
 
-function displayQtyAboveCart() {
+// function displayQtyAboveCart() {
+  function displayUpdate() {
   let quantity = getQtyItens();
   if (quantity > 0) {
     document.getElementById("lblCartCount").style.visibility = "visible";
     document.getElementById("lblCartCount").innerHTML = quantity;
     document.getElementById("emptyCartMessage").style.visibility = "hidden";
+    document.getElementById("confirmation-btn").style.visibility = "visible";
   } else {
     document.getElementById("lblCartCount").style.visibility = "hidden";
-    //insert empty cart
     document.getElementById("emptyCartMessage").style.visibility = "visible";
+    document.getElementById("confirmation-btn").style.visibility = "hidden";
   }
 }
 
@@ -221,7 +218,8 @@ function displayQtyAboveCart() {
 function updateCart() {
   renderCartContents();
   displayPrice();
-  displayQtyAboveCart();
+  // displayQtyAboveCart();
+  displayUpdate();
   addElements();
   removeElements();
 //  checkEmptyCart();

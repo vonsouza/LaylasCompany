@@ -91,6 +91,29 @@ button {
 }
 /* End utility classes */
 
+.confirmation-btn{
+  margin-bottom: 15px;
+}
+/* .meuIcon{
+  width:'80px';
+  height:"80px";
+  color: rgb(218, 9, 9)"
+} */
+.confirmation-box{
+  background-color: var(--success-color);
+  display: flex;
+  justify-content:space-around;
+  border-radius: 12px;
+  box-shadow: #303030;
+  margin-top: 15px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+.confirmation-text{
+  margin-left: 15%;
+}
 /* Alert */
 #alertSuccess{
   display: flex;
