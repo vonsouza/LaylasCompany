@@ -31,7 +31,7 @@ function cartItemTemplate(itemJson) {
   <a href="#">
     <h2 class="card__name">${item.Name}</h2>
   </a>
-  <p class="cart-card__color">${item.Colors[0].ColorName}</p>
+  <p class="cart-card__color">${item.DescriptionHtmlSimple}</p>
   <div id="removeItem">
     <p id="removeFromCart${item.Id}"" data-id="removeItem"> 
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -47,7 +47,7 @@ function cartItemTemplate(itemJson) {
 </li>`;
   return newItem;
 }
-//<i class="fa fa-plus-circle" id="addQty${item.Id}"" data-id="addQtyItem${item.Id}"></i> style="width: 15px; height: 15px;"
+
 function removeElements() {
   if (document.getElementById("removeFromCart880RR"))
     document
@@ -78,6 +78,53 @@ function removeElements() {
     document
       .getElementById("removeFromCart344YJ")
       .addEventListener("click", removeItem.bind(this, "344YJ"));
+  if (document.getElementById("removeFromCartA1A1A"))
+    document
+      .getElementById("removeFromCartA1A1A")
+      .addEventListener("click", removeItem.bind(this, "A1A1A"));
+
+  if (document.getElementById("removeFromCartA1B2B"))
+    document
+      .getElementById("removeFromCartA1B2B")
+      .addEventListener("click", removeItem.bind(this, "A1B2B"));
+
+  if (document.getElementById("removeFromCartA1C3C"))
+    document
+      .getElementById("removeFromCartA1C3C")
+      .addEventListener("click", removeItem.bind(this, "A1C3C"));
+
+  if (document.getElementById("removeFromCartA1D4D"))
+    document
+      .getElementById("removeFromCartA1D4D")
+      .addEventListener("click", removeItem.bind(this, "A1D4D"));
+  if (document.getElementById("removeFromCartE2A11"))
+    document
+      .getElementById("removeFromCartE2A11")
+      .addEventListener("click", removeItem.bind(this, "E2A11"));
+
+  if (document.getElementById("removeFromCartE2A22"))
+    document
+      .getElementById("removeFromCartE2A22")
+      .addEventListener("click", removeItem.bind(this, "E2A22"));
+  if (document.getElementById("removeFromCartI3A3A"))
+    document
+      .getElementById("removeFromCartI3A3A")
+      .addEventListener("click", removeItem.bind(this, "I3A3A"));
+
+  if (document.getElementById("removeFromCartI3A3B"))
+    document
+      .getElementById("removeFromCartI3A3B")
+      .addEventListener("click", removeItem.bind(this, "I3A3B"));
+
+  if (document.getElementById("removeFromCartI3A3C"))
+    document
+      .getElementById("removeFromCartI3A3C")
+      .addEventListener("click", removeItem.bind(this, "I3A3C"));
+
+  if (document.getElementById("removeFromCartI3A3D"))
+    document
+      .getElementById("removeFromCartI3A3D")
+      .addEventListener("click", removeItem.bind(this, "I3A3D"));
 }
 
 function removeItem(idToBeRemoved) {
@@ -110,11 +157,50 @@ function addElements() {
     document
       .getElementById("addQty880RT")
       .addEventListener("click", addItem.bind(this, "880RT"));
-
   if (document.getElementById("addQty344YJ"))
     document
       .getElementById("addQty344YJ")
       .addEventListener("click", addItem.bind(this, "344YJ"));
+  if (document.getElementById("addQtyA1A1A"))
+    document
+      .getElementById("addQtyA1A1A")
+      .addEventListener("click", addItem.bind(this, "A1A1A"));
+  if (document.getElementById("addQtyA1B2B"))
+    document
+      .getElementById("addQtyA1B2B")
+      .addEventListener("click", addItem.bind(this, "A1B2B"));
+  if (document.getElementById("addQtyA1C3C"))
+    document
+      .getElementById("addQtyA1C3C")
+      .addEventListener("click", addItem.bind(this, "A1C3C"));
+  if (document.getElementById("addQtyA1D4D"))
+    document
+      .getElementById("addQtyA1D4D")
+      .addEventListener("click", addItem.bind(this, "A1D4D"));
+  if (document.getElementById("addQtyE2A11"))
+    document
+      .getElementById("addQtyE2A11")
+      .addEventListener("click", addItem.bind(this, "E2A11"));
+  if (document.getElementById("addQtyE2A22"))
+    document
+      .getElementById("addQtyE2A22")
+      .addEventListener("click", addItem.bind(this, "E2A22"));
+  if (document.getElementById("addQtyI3A3A"))
+    document
+      .getElementById("addQtyI3A3A")
+      .addEventListener("click", addItem.bind(this, "I3A3A"));
+  if (document.getElementById("addQtyI3A3B"))
+    document
+      .getElementById("addQtyI3A3B")
+      .addEventListener("click", addItem.bind(this, "I3A3B"));
+  if (document.getElementById("addQtyI3A3C"))
+    document
+      .getElementById("addQtyI3A3C")
+      .addEventListener("click", addItem.bind(this, "I3A3C"));
+  if (document.getElementById("addQtyI3A3D"))
+    document
+      .getElementById("addQtyI3A3D")
+      .addEventListener("click", addItem.bind(this, "I3A3D"));
 }
 
 function addItem(idToBeAdded) {
@@ -190,8 +276,7 @@ export function getQtyItens() {
   return qty;
 }
 
-// function displayQtyAboveCart() {
-  function displayUpdate() {
+function displayUpdate() {
   let quantity = getQtyItens();
   if (quantity > 0) {
     document.getElementById("lblCartCount").style.visibility = "visible";
@@ -205,24 +290,12 @@ export function getQtyItens() {
   }
 }
 
-// function checkEmptyCart(){
-//   let quantity = getQtyItens();
-//   if (quantity  0) {
-//     document.getElementById("lblCartCount").style.visibility = "visible";
-//     document.getElementById("lblCartCount").innerHTML = quantity;
-//   } else {
-//     document.getElementById("lblCartCount").style.visibility = "hidden";
-//   }
-// }
-
 function updateCart() {
   renderCartContents();
   displayPrice();
-  // displayQtyAboveCart();
   displayUpdate();
   addElements();
   removeElements();
-//  checkEmptyCart();
 }
 
 
