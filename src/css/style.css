@@ -2,9 +2,9 @@
   --font-body: 'Tillana', Arial, Helvetica, sans-serif;
   --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
   /* colors */
-  --primary-color: #330066;/* #f0a868;*/
-  --secondary-color: #9555cc; /*#525b0f;*/
-  --tertiary-color: #de88f3; /* #a4b8c4;*/
+  --primary-color: #330066;
+  --secondary-color: #9555cc; 
+  --tertiary-color: #de88f3;
   --light-grey: #d0d0d0;
   --dark-grey: #303030;
   --success-color: #98fb98;
@@ -55,6 +55,7 @@ header {
   background-color: #303030;
   border-radius: 10px;
   animation: pulse 2s infinite;
+  margin-bottom: 3%;
 }
 .logo--square {
   font-size: var(--small-font);
@@ -92,17 +93,19 @@ button {
 /* End utility classes */
 
 .confirmation-btn{
-  margin-bottom: 15px;
+  margin-top: 5%;
+  margin-bottom: 2%;
 }
-/* .meuIcon{
-  width:'80px';
-  height:"80px";
-  color: rgb(218, 9, 9)"
-} */
+
+.confirmation-btn:hover{
+  cursor: pointer;
+}
+
 .bi-trash:hover{
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
   border-radius: 5px;
   transform: scale(1.3);
+  cursor: pointer;
 }
 .confirmation-box{
   background-color: var(--success-color);
@@ -118,6 +121,9 @@ button {
 }
 .confirmation-text{
   margin-left: 15%;
+}
+.contact-us{
+  margin-left: 25%;
 }
 /* Alert */
 #alertSuccess{
@@ -168,7 +174,7 @@ button:hover {
 .necklace-list {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: space-around; /* space-between;  */
   list-style-type: none;
   padding: 0;
 }
@@ -179,6 +185,33 @@ button:hover {
   text-decoration: none;
   color: var(--dark-grey);
 }
+
+#products{
+  /*flex-wrap: wrap;*/
+  
+}
+#products .product-list{
+  flex-direction: column;
+  padding-left: 15%;
+  justify-content: center;
+
+}
+
+#products .product-list h2,
+#products .product-list p{
+  padding-left: 15%;
+}
+
+#products .product-list img{
+  margin-top: 10%;
+  border-radius: 10%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#products .product-list a{
+  cursor: context-menu;
+}
+
 /* Styles for product lists */
 .product-card {
   flex: 1 1 45%;
@@ -236,25 +269,20 @@ button:hover {
   vertical-align: top;
   margin-left: -10px;
 }
-/* .badge-to-cart-icon::before{
-  content: "2";
-  background-color: #2196F3;
-  font-size: 12px;
-  font-family: sans-serif;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 1.7em;
-  min-height: 1.7em;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  border-radius: 50%;
-  margin-left: -10px;
-} */
 /* End Superscript number of items*/
+.cart-total-text,
+.cart-total-value{
+  font-weight: bold;
+  font-size: larger;
+  animation: blinker 2s linear infinite;
+}
 
+@keyframes blinker {
+  30% {
+    opacity: 0;
+    border-bottom: 2px solid rgb(226, 212, 17);
+  }
+}
 /*Price*/
 .cart-total-text {
   display: inline;
@@ -264,7 +292,6 @@ button:hover {
 }
 .cart-footer{
   text-align: right;
-  
 }
 .qty-above-cart-icon{
   content: attr(5);
@@ -285,13 +312,15 @@ button:hover {
   transform: scale(1.3);
 }
 .add-icon{
+  margin-top: 10%;
   fill: var(--tertiary-color);
   width: 25px;
   height: 25px;
 }
 .add-icon:hover{
   fill: var(--secondary-color);
-  transform: scale(1.3);
+  transform: scale(1.2);
+  cursor: pointer;
 }
 .company-name{
   align-content: center;
@@ -363,7 +392,7 @@ footer {
   top: 0;
   left: 0;
   height: 100%;
-  width: 200px;
+  width: 220px;
   background: #de88f3; /*#11101d;*/
   transition: all 0.5s ease;
 }
@@ -376,6 +405,7 @@ footer {
 .sidebar .nav-items {
   height: 100%;
   padding: 0 0 150px 0;
+  width: 75%;
   overflow: auto;
 }
 .sidebar .nav-items li {
@@ -386,11 +416,11 @@ footer {
   padding: auto;
 }
 .item_name{
-  margin: 5px;
+  margin: 2%;
 }
 .sidebar .item_name:hover{
   background-color: var(--secondary-color);
-  transform: scale(1.01);
+  transform: scale(1.0005);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin-left: 5%;
   padding-left: 5%;
@@ -408,7 +438,7 @@ footer {
   width: 50px;
   animation-name: pulse-heart;
   animation-duration: 2s;
-  animation-delay: 3s;
+  animation-delay: 1s;
   animation-iteration-count: infinite;
 }
 @keyframes pulse-heart {

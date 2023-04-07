@@ -1,0 +1,92 @@
+[
+    {
+      "Id": "A1A1A",
+      "NameWithoutBrand": "Colorful Stars",
+      "Name": "Necklace Colorful Stars",
+      "Image": "../images/necklaces/necklace1.jpg",
+  
+      "SizesAvailable": {},
+      "Colors": [
+        {
+          "ColorCode": "01",
+          "ColorName": "Colorful"
+        }
+      ],
+      "DescriptionHtmlSimple": "This piece is for a true star child or anyone connected to the flowers. Stars represent sweetness, joy, and beauty. Use this piece to activate your own internal beauty and inner radiance.",
+      "SuggestedRetailPrice": 3.0,
+      "Brand": {
+        "Id": "1308",
+        "LogoSrc": "../images/logos/marmot-160x100.jpg",
+        "Name": "Necklace Crafts"
+      },
+      "ListPrice": 1.99,
+      "FinalPrice": 1.99
+    },
+    {
+      "Id": "A1B2B",
+      "NameWithoutBrand": "American Necklace",
+      "Name": "Craft American Necklace",
+      "Image": "../images/necklaces/necklace2.jpg",
+  
+      "SizesAvailable": {},
+      "Colors": [
+        {
+          "ColorCode": "12",
+          "ColorName": "Blue, Red and White"
+        }
+      ],
+      "DescriptionHtmlSimple": "<strong>Closeout</strong>. The design is classic and the luster of high-quality American stones.",
+      "SuggestedRetailPrice": 2.7,
+      "Brand": {
+        "Id": "1440",
+        "Name": "Necklace Crafts"
+      },
+      "ListPrice": 1.79,
+      "FinalPrice": 1.79
+    },
+    {
+      "Id": "A1C3C",
+      "NameWithoutBrand": "Light Blue",
+      "Name": "Necklace Light Blue",
+      "Image": "../images/necklaces/necklace3.jpg",
+  
+      "SizesAvailable": {},
+      "Colors": [
+        {
+          "ColorCode": "05",
+          "ColorName": "Light Blue"
+        }
+      ],
+      "DescriptionHtmlSimple": "A piece of jewelry consisting of a string of stones, beads, jewels, or the like.",
+      "SuggestedRetailPrice": 5.0,
+      "Brand": {
+        "Id": "1440",
+        "Name": "Necklace Crafts"
+      },
+      "ListPrice": 3.49,
+      "FinalPrice": 3.49
+    },
+    {
+      "Id": "A1D4D",
+      "NameWithoutBrand": "Bunny Necklace",
+      "Name": "Craft Bunny Necklace",
+      "IsFamousBrand": false,
+      "Image": "../images/necklaces/necklace4.jpg",
+  
+      "SizesAvailable": {},
+      "Colors": [
+        {
+          "ColorCode": "07",
+          "ColorName": "Yellow, Green, and Red"
+        }
+      ],
+      "DescriptionHtmlSimple": "Both majestic and delicate, it symbolizes purity and grace. In this spirit, our master jewelers create this piece of jewelry in our collection.",
+      "SuggestedRetailPrice": 7.99,
+      "Brand": {
+        "Id": "35027",
+        "Name": "Necklace Crafts"
+      },
+      "ListPrice": 6.15,
+      "FinalPrice": 6.15
+    }
+  ]

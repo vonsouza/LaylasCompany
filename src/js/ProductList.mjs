@@ -2,7 +2,7 @@ import { renderListWithTemplate } from "./utils.mjs";
 
 function productCardTemplate(product) {
   return `<li class="product-card">
-  <a href="product_pages/index.html?product=${product.Id}">
+  <a href="../product_pages/index.html?product=${product.Id}">
   <img
     src="${product.Image}"
     alt="Image of ${product.Name}"
@@ -31,10 +31,4 @@ export default class ProductList {
   renderList(list) {
     renderListWithTemplate(productCardTemplate, this.listElement, list);
   }
-
-  // render before doing the stretch
-  // renderList(list) {
-  //   const htmlStrings = list.map(productCardTemplate);
-  //   this.listElement.insertAdjacentHTML("afterbegin", htmlStrings.join(""));
-  // }
 }
