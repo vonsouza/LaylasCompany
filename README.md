@@ -1,5 +1,5 @@
 # Layla Company
-Layla Company is a handmade bracelets, earrings and necklaces shop. deployed by Von Souza. 
+Layla Company is a handmade bracelets, earrings and necklaces shop. Deployed by Von Souza. 
 
 ## Run - General Public (Domain)
 - Available at the link: [layla-company.netlify.app/](https://layla-company.netlify.app/)
