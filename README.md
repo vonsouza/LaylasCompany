@@ -1,6 +1,11 @@
 # Layla Company
 Layla Company is a handmade bracelets, earrings and necklaces shop. deployed by Von Souza. 
 
+## Run - General Public (Domain)
+- Available at the link: [layla-company.netlify.app/](https://layla-company.netlify.app/)
+
+## Details
+
 Using HTML, JavaScript and CSS.
 
 The user has the ability to add and remove something from the cart.
@@ -18,10 +23,6 @@ The product detail pages is generated dynamically with Javascript.
 When a product is clicked on in the product listing it opens a generic product detail page, and provide an identifier for the requested product. 
 
 The product listing on the index page is generated dynamically. 
-
-## Run - General Public 
-
-- Available at: https://nimble-sfogliatella-ecc859.netlify.app
 
 ## For developers
 
